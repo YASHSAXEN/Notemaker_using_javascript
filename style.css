@@ -2,9 +2,16 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
+body::-webkit-scrollbar{
+    display: none;
+  }
+
 .nav{
+    position: fixed;
+    top: 0px;
     width: 100vw;
     height: 60px;
     background-color: rgb(255, 200, 0);
@@ -29,7 +36,7 @@
     height: 30px;
     border-radius: 6px;
     border: transparent;
-    background-color: rgb(255, 200, 0);
+    background-color: orange;
     cursor: pointer;
     transition: all;
     transition-duration: 0.6s;
@@ -41,14 +48,22 @@
     scale: 0.9;
 }
 
+.add{
+    position: fixed;
+    top: 10px;
+    right: 15px;
+}
+
 .notes{
     /* border: 1px solid black; */
+    padding-top: 50px;
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
     width: 100vw;
     padding-left: 10px;
-   
+   padding-bottom: 80px;
+   /* justify-content: space-evenly; */
 }
 
 .note1{
@@ -77,6 +92,7 @@
 }
 #box-id p{
     font-weight: bolder;
+    /* font-size: 14px */
 }
 #but{
     width: 60%;
@@ -117,4 +133,67 @@
     font-family: 'Times New Roman';
     padding-left: 8px;
     font-size: medium;
+}
+
+.footer{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 70px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer p{
+    color: white;
+    font-size: 15px;
+}
+
+.footer div{
+    display: flex;
+    gap: 20px;
+}
+.icons{
+    color: white;
+    cursor: pointer;
+}
+
+.icons:hover{
+    color: gray;
+}
+@media screen and (max-width:995px) {
+    #box-id p{
+        font-size: 14px;
+    }
+}
+@media screen and (max-width:895px) {
+    #box-id{
+        width: 50%;
+    }
+}
+@media screen and (max-width:800px) {
+    .note1{
+        width: 45%;
+    }
+}
+@media screen and (max-width:600px) {
+    .note1{
+        width: 75%;
+    }
+    .notes{
+        justify-content: center;
+    }
+    .footer p{
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .note1{
+        width: 85%;
+    }
 }
